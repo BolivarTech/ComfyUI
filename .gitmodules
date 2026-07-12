@@ -1,0 +1,16 @@
+[submodule "custom_nodes/comfyui-manager"]
+	path = custom_nodes/comfyui-manager
+	url = https://github.com/BolivarTech/ComfyUI-Manager
+	branch = bt-main
+[submodule "custom_nodes/ComfyUI-GGUF"]
+	path = custom_nodes/ComfyUI-GGUF
+	url = https://github.com/BolivarTech/ComfyUI-GGUF
+	branch = bt-main
+[submodule "custom_nodes/comfyui-videohelpersuite"]
+	path = custom_nodes/comfyui-videohelpersuite
+	url = https://github.com/BolivarTech/ComfyUI-VideoHelperSuite
+	branch = bt-main
+[submodule "custom_nodes/ComfyUI-LatentSyncWrapper"]
+	path = custom_nodes/ComfyUI-LatentSyncWrapper
+	url = https://github.com/BolivarTech/ComfyUI-LatentSyncWrapper
+	branch = bt-main
