@@ -487,7 +487,13 @@ class OffloadCheckpointFunction(torch.autograd.Function):
         ctx.save_for_backward(x)
         ctx.forward_fn = forward_fn
         with torch.no_grad():
-            return forward_fn(x)
+            # .clone() is required, not defensive. Autograd forbids in-place edits to a
+            # custom Function's output, and Flux's DoubleStreamBlock does exactly that:
+            # `img += apply_mod(self.img_attn.proj(img_attn), ...)` (ldm/flux/layers.py).
+            # Without the clone, training Flux with offloading=True dies on the first
+            # step with "Output 0 of OffloadCheckpointFunctionBackward is a view and is
+            # being modified inplace" -- which is also where PyTorch suggests the fix.
+            return forward_fn(x).clone()
 
     @staticmethod
     def backward(ctx, grad_out: torch.Tensor):
