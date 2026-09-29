@@ -14,3 +14,7 @@
 	path = custom_nodes/ComfyUI-LatentSyncWrapper
 	url = https://github.com/BolivarTech/ComfyUI-LatentSyncWrapper
 	branch = bt-main
+[submodule "custom_nodes/ComfyUI-BT-Nodes"]
+	path = custom_nodes/ComfyUI-BT-Nodes
+	url = https://github.com/BolivarTech/ComfyUI-BT-Nodes
+	branch = main
